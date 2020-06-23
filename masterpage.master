@@ -1,0 +1,262 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="masterpage.master.cs" Inherits="MasterPage" %>
+
+<%@ Register src="HaberManset.ascx" tagname="HaberManset" tagprefix="uc1" %>
+
+<%@ Register src="datal.ascx" tagname="datal" tagprefix="uc2" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .style1
+        {
+        }
+        .style26
+        {
+            height: 34px;
+            align:right;
+            background-color: #666633;
+        }
+        .style27
+        {
+            width: 26%;
+            height: 34px;
+            background-color: #666633;
+        }
+        .style28
+        {
+            width: 19%;
+            height: 34px;
+            background-color: #666633;
+        }
+        .style29
+        {
+            width: 32%;
+            height: 34px;
+            background-color: #666633;
+        }
+        .style30
+        {
+            width: 26%;
+        }
+        .style34
+        {
+            width: 123px;
+        }
+               
+        .style35
+        {
+            width: 18px;
+        }
+        .style36
+        {
+            height: 116px;
+        }
+               
+        .style37
+        {
+            width: 30%;
+        }
+        .style38
+        {
+            width: 42%;
+        }
+        .style39
+        {
+            width: 29%;
+        }
+               
+        .style40
+        {
+            width: 100px;
+            float: left;
+        }
+        .style41
+        {
+            width: 100px;
+            float: right;
+        }
+               
+        .style42
+        {
+            width: 25%;
+        }
+        .style43
+        {
+            height: 34px;
+            align: right;
+            width: 25%;
+            background-color: #666633;
+        }
+        .banner 
+        {
+            background-image:url(banner.png);
+            background-repeat:repeat-x;
+            background-position:center;
+            height:200px;
+        }
+        .banner2
+        {
+            background-image:url(dunya.png);
+            background-position:center;
+            background-repeat:no-repeat;
+            width:177px;
+            height:177px;
+            }
+        .banner3
+        {
+            background-image:url(text.png);
+            background-position:left;
+            background-repeat:no-repeat;
+            }
+               
+        .style44
+        {
+            width: 100%;
+        }
+               
+        </style>
+</head>
+<body background="bg.png">
+   
+    <form id="form1" runat="server">
+    <div>
+        <table cellpadding="0" cellspacing="0" class="style1" border="0px">
+            <tr>
+                <td class="banner" colspan="5" width="100%" align="right">
+                    <asp:Button ID="Button1" runat="server" align="right" Text="Ara" 
+                        onclick="Button1_Click" />
+                    <asp:TextBox ID="TextAra" runat="server" align="right" ForeColor="Silver" 
+                        onload="TextBox1_Load" onunload="TextAra_Unload">Aranacak kelime</asp:TextBox>
+                    <table cellpadding="0" cellspacing="0" class="style44">
+                        <tr>
+                            <td class="banner2">
+                                &nbsp;</td>
+                            <td class="banner3">
+                                &nbsp;</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td align="center" colspan="2" 
+                    style=" border-spacing: 0px;">
+                    <a href="Default.aspx"style="text-decoration: none">Ana Sayfa</a>
+                </td>
+               
+                <td align="center" bgcolor="Yellow" class="style30">
+                <a href="videogaleri.aspx" style="text-decoration: none">Video Galeri</a>
+              </td>
+               
+                <td align="center" bgcolor="Yellow" width="25%" >
+                <a href="fotogaleri.aspx" style="text-decoration: none">Foto Galeri</a>
+                </td>
+                <td align="center" bgcolor="Yellow" class="style42" >
+                    <a href="yazarlar.aspx" style="text-decoration: none" >Yazarlar</a>
+                 </td>
+            </tr>
+            <tr>
+                <td bgcolor="#33CCFF" colspan="5">
+                    <table class="style1">
+                        <tr>
+                            <td class="style39"><a href="KategoriSec.aspx?Kategori=Ekonomi" style="text-decoration: none">
+                                Ekonomi</a></td>
+                            <td class="style38"><a href="KategoriSec.aspx?Kategori=Siyaset" style="text-decoration: none">
+                                Siyaset</a></td>
+                            <td width="25%"><a href="KategoriSec.aspx?Kategori=Yasam" style="text-decoration: none">
+                                Yaşam</a></td>
+                           <td class="style37"> <a href="KategoriSec.aspx?Kategori=Spor" style="text-decoration: none">
+                                Spor</a></td>
+                                
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td class="style26">
+                    Son Dakika:</td>
+                <td class="style29">
+                    <asp:LinkButton ID="LinkButton1"  runat="server" onclick="LinkButton1_Click">LinkButton</asp:LinkButton>
+                </td>
+                <td class="style27">
+                    <asp:DropDownList ID="DropDownList1" runat="server" 
+                        DataTextFormatString="Kimlik" 
+                        onselectedindexchanged="DropDownList1_SelectedIndexChanged">
+                        <asp:ListItem>tarihe göre haber</asp:ListItem>
+                        <asp:ListItem>bugün </asp:ListItem>
+                        <asp:ListItem>bu hafta</asp:ListItem>
+                        <asp:ListItem>bu ay</asp:ListItem>
+                    </asp:DropDownList>
+                </td>
+                <td class="style28">
+                    Hava Durumu:</td>
+                <td class="style43">
+                    <asp:Image ID="imghdurum" runat="server" Height="25px" Width="25px" />
+                    <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+                </td>
+            </tr>
+            </table>
+    </div>
+    <table align="left" cellpadding="0" cellspacing="0" class="style40">
+        <tr>
+            <td>
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+            <uc2:datal ID="datal1" runat="server" />
+        
+        </asp:ContentPlaceHolder>
+                    </td>
+        </tr>
+    </table>
+    <table align="right" cellpadding="0" cellspacing="0" class="style41">
+        <tr>
+            <td>
+                &nbsp;</td>
+            <td>
+                
+                    <asp:DataList ID="DataList1" runat="server" BackColor="White" 
+                        BorderStyle="None" BorderWidth="0px" CellPadding="0" 
+                    ForeColor="Black" GridLines="Horizontal" Height="68px" CaptionAlign="Right" 
+                        HorizontalAlign="Right" 
+                    onselectedindexchanged="DataList1_SelectedIndexChanged" RepeatColumns="3" 
+                        RepeatDirection="Horizontal" style="background-color: #A19F8A">
+                        <FooterStyle BackColor="#CCCC99" ForeColor="Black" />
+                        <HeaderStyle BackColor="#333333" Font-Bold="True" ForeColor="White" />
+                        <ItemTemplate>
+                            <table cellpadding="0" cellspacing="0" class="style36">
+                                <tr>
+                                    <td colspan="2">
+                                    En Çok Okunan Haberler</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2">
+                                    <a href="Haberincele.aspx?Kimlik=<%#Eval("Kimlik")%>">
+                                        <img alt="" src="admin/images/<%#Eval("foto") %>" 
+                style="width: 157px; height: 78px; margin-left: 3px" /></a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="style34">
+                                    <a href="Haberincele.aspx?Kimlik=<%#Eval("Kimlik")%>">
+                                        <asp:LinkButton ID="Lben" runat="server" OnClick="Lben_Click"><%#Eval("baslik") %></asp:LinkButton>
+                                    </td>
+                                    <td class="style35">
+                                        <asp:Label ID="Lblht" runat="server" Text=<%#Eval("hit") %>></asp:Label>
+                                    </td>
+                                </tr>
+                            </table>
+                        </ItemTemplate>
+                        <SelectedItemStyle BackColor="#CC3333" Font-Bold="True" ForeColor="White" />
+                    </asp:DataList>
+                
+                </td>
+        </tr>
+    </table>
+   
+    </form>
+</body>
+</html>
